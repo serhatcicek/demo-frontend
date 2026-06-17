@@ -1,0 +1,9 @@
+{
+  "name": "demo-frontend",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Contract-first frontend demo for payments",
+  "scripts": {
+    "dev": "node server.js"
+  }
+}
