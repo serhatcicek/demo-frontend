@@ -1,0 +1,201 @@
+<% title = 'Araçlar' %>
+
+<div style="display: grid; grid-template-columns: 250px 1fr; gap: 2rem; margin-bottom: 2rem;">
+    <!-- SIDEBAR FILTERS -->
+    <aside style="background: var(--light); padding: 1.5rem; border-radius: 8px; height: fit-content;">
+        <h3 style="margin-bottom: 1.5rem; color: var(--secondary); font-size: 1.2rem;">Filtreler</h3>
+        
+        <!-- Category Filter -->
+        <div style="margin-bottom: 1.5rem;">
+            <h4 style="margin-bottom: 0.75rem; color: var(--text-dark); font-size: 1rem;">Kategori</h4>
+            <% const categories = ['Ekonomik', 'SUV', 'Lüks', 'Ticari']; %>
+            <% categories.forEach(cat => { %>
+                <div style="margin-bottom: 0.5rem;">
+                    <label style="display: flex; align-items: center; cursor: pointer; color: var(--text-dark);">
+                        <input type="checkbox" name="category" value="<%= cat.toLowerCase() %>" style="margin-right: 0.5rem; cursor: pointer;" />
+                        <%= cat %>
+                    </label>
+                </div>
+            <% }); %>
+        </div>
+
+        <!-- Price Range Filter -->
+        <div style="margin-bottom: 1.5rem; padding-top: 1.5rem; border-top: 1px solid var(--border);">
+            <h4 style="margin-bottom: 0.75rem; color: var(--text-dark); font-size: 1rem;">Fiyat Aralığı</h4>
+            <div style="margin-bottom: 0.5rem;">
+                <label style="display: flex; align-items: center; cursor: pointer; color: var(--text-dark);">
+                    <input type="radio" name="price" value="0-500" style="margin-right: 0.5rem; cursor: pointer;" checked />
+                    0 - 500 ₺
+                </label>
+            </div>
+            <div style="margin-bottom: 0.5rem;">
+                <label style="display: flex; align-items: center; cursor: pointer; color: var(--text-dark);">
+                    <input type="radio" name="price" value="500-1000" style="margin-right: 0.5rem; cursor: pointer;" />
+                    500 - 1000 ₺
+                </label>
+            </div>
+            <div style="margin-bottom: 0.5rem;">
+                <label style="display: flex; align-items: center; cursor: pointer; color: var(--text-dark);">
+                    <input type="radio" name="price" value="1000-2000" style="margin-right: 0.5rem; cursor: pointer;" />
+                    1000 - 2000 ₺
+                </label>
+            </div>
+            <div style="margin-bottom: 0.5rem;">
+                <label style="display: flex; align-items: center; cursor: pointer; color: var(--text-dark);">
+                    <input type="radio" name="price" value="2000+" style="margin-right: 0.5rem; cursor: pointer;" />
+                    2000 ₺+
+                </label>
+            </div>
+        </div>
+
+        <!-- Fuel Type Filter -->
+        <div style="margin-bottom: 1.5rem; padding-top: 1.5rem; border-top: 1px solid var(--border);">
+            <h4 style="margin-bottom: 0.75rem; color: var(--text-dark); font-size: 1rem;">Yakıt Tipi</h4>
+            <% const fuels = ['Benzin', 'Dizel', 'Elektrik', 'Hibrit']; %>
+            <% fuels.forEach(fuel => { %>
+                <div style="margin-bottom: 0.5rem;">
+                    <label style="display: flex; align-items: center; cursor: pointer; color: var(--text-dark);">
+                        <input type="checkbox" name="fuel" value="<%= fuel.toLowerCase() %>" style="margin-right: 0.5rem; cursor: pointer;" />
+                        <%= fuel %>
+                    </label>
+                </div>
+            <% }); %>
+        </div>
+
+        <!-- Transmission Filter -->
+        <div style="padding-top: 1.5rem; border-top: 1px solid var(--border);">
+            <h4 style="margin-bottom: 0.75rem; color: var(--text-dark); font-size: 1rem;">Vites</h4>
+            <div style="margin-bottom: 0.5rem;">
+                <label style="display: flex; align-items: center; cursor: pointer; color: var(--text-dark);">
+                    <input type="checkbox" name="transmission" value="manual" style="margin-right: 0.5rem; cursor: pointer;" />
+                    Manuel
+                </label>
+            </div>
+            <div style="margin-bottom: 0.5rem;">
+                <label style="display: flex; align-items: center; cursor: pointer; color: var(--text-dark);">
+                    <input type="checkbox" name="transmission" value="automatic" style="margin-right: 0.5rem; cursor: pointer;" checked />
+                    Otomatik
+                </label>
+            </div>
+        </div>
+
+        <button class="btn btn-primary" style="width: 100%; margin-top: 1.5rem;">Filtrele</button>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <div>
+        <!-- HEADER -->
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem;">
+            <h1 style="font-size: 2rem; color: var(--secondary);">Mevcut Araçlar</h1>
+            <select style="
+                padding: 0.5rem 1rem;
+                border: 1px solid var(--border);
+                border-radius: 6px;
+                background: white;
+                color: var(--text-dark);
+                cursor: pointer;
+            ">
+                <option>En Popüler</option>
+                <option>En Düşük Fiyat</option>
+                <option>En Yüksek Fiyat</option>
+                <option>En Yeni</option>
+                <option>En Yüksek Puan</option>
+            </select>
+        </div>
+
+        <!-- VEHICLES GRID -->
+        <div class="grid grid-3" style="margin-bottom: 2rem;">
+            <%
+                const vehicles = [
+                    { id: 1, name: 'Toyota Corolla', category: 'Ekonomik', price: 500, rating: 4.8, fuel: 'Benzin', transmission: 'Otomatik', seats: 5, year: 2023 },
+                    { id: 2, name: 'Renault Clio', category: 'Ekonomik', price: 450, rating: 4.7, fuel: 'Dizel', transmission: 'Manuel', seats: 5, year: 2022 },
+                    { id: 3, name: 'Hyundai i10', category: 'Ekonomik', price: 350, rating: 4.6, fuel: 'Benzin', transmission: 'Otomatik', seats: 4, year: 2023 },
+                    { id: 4, name: 'Ford Focus', category: 'Ekonomik', price: 520, rating: 4.8, fuel: 'Benzin', transmission: 'Otomatik', seats: 5, year: 2023 },
+                    { id: 5, name: 'Volkswagen Golf', category: 'Ekonomik', price: 580, rating: 4.9, fuel: 'Benzin', transmission: 'Otomatik', seats: 5, year: 2023 },
+                    { id: 6, name: 'Peugeot 308', category: 'Ekonomik', price: 490, rating: 4.7, fuel: 'Dizel', transmission: 'Manuel', seats: 5, year: 2022 },
+                    { id: 7, name: 'BMW X5', category: 'SUV', price: 2500, rating: 4.9, fuel: 'Benzin', transmission: 'Otomatik', seats: 7, year: 2024 },
+                    { id: 8, name: 'Audi Q7', category: 'SUV', price: 2800, rating: 4.9, fuel: 'Dizel', transmission: 'Otomatik', seats: 7, year: 2024 },
+                    { id: 9, name: 'Mercedes-Benz GLE', category: 'SUV', price: 2600, rating: 5.0, fuel: 'Benzin', transmission: 'Otomatik', seats: 7, year: 2024 },
+                    { id: 10, name: 'Land Rover Discovery', category: 'SUV', price: 3000, rating: 4.8, fuel: 'Dizel', transmission: 'Otomatik', seats: 7, year: 2023 },
+                    { id: 11, name: 'Mercedes-Benz E-Class', category: 'Lüks', price: 3500, rating: 5.0, fuel: 'Benzin', transmission: 'Otomatik', seats: 5, year: 2024 },
+                    { id: 12, name: 'BMW 7 Series', category: 'Lüks', price: 3800, rating: 5.0, fuel: 'Benzin', transmission: 'Otomatik', seats: 5, year: 2024 }
+                ];
+            %>
+            <% vehicles.forEach(vehicle => { %>
+                <div style="
+                    background: white;
+                    border-radius: 12px;
+                    overflow: hidden;
+                    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+                    transition: all 0.3s ease;
+                    cursor: pointer;
+                " onmouseover="this.style.transform='translateY(-8px)'; this.style.boxShadow='0 12px 24px rgba(0,0,0,0.15)';" 
+                   onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 2px 8px rgba(0,0,0,0.08)';">
+                    
+                    <div style="
+                        background: linear-gradient(135deg, var(--secondary) 0%, #2D3E5F 100%);
+                        height: 150px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        color: white;
+                        font-size: 2.5rem;
+                        position: relative;
+                    ">
+                        🚗
+                        <span style="
+                            position: absolute;
+                            top: 10px;
+                            right: 10px;
+                            background: var(--primary);
+                            color: white;
+                            padding: 0.25rem 0.75rem;
+                            border-radius: 20px;
+                            font-size: 0.75rem;
+                            font-weight: 600;
+                        "><%= vehicle.year %></span>
+                    </div>
+
+                    <div style="padding: 1rem;">
+                        <h3 style="margin-bottom: 0.5rem; color: var(--text-dark); font-size: 1.1rem;"><%= vehicle.name %></h3>
+                        
+                        <div style="display: flex; justify-content: space-between; margin-bottom: 0.75rem; font-size: 0.85rem; color: var(--text-light);">
+                            <span>⭐ <%= vehicle.rating %></span>
+                            <span><%= vehicle.seats %> kişi</span>
+                        </div>
+
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem; margin-bottom: 1rem; font-size: 0.85rem; color: var(--text-light);">
+                            <span>🛢️ <%= vehicle.fuel %></span>
+                            <span>⚙️ <%= vehicle.transmission %></span>
+                        </div>
+
+                        <div style="display: flex; justify-content: space-between; align-items: center; padding-top: 1rem; border-top: 1px solid var(--border);">
+                            <span style="font-size: 1.3rem; font-weight: 700; color: var(--primary);">
+                                <%= new Intl.NumberFormat('tr-TR', { style: 'currency', currency: 'TRY' }).format(vehicle.price) %>/gün
+                            </span>
+                            <a href="/vehicles/<%= vehicle.slug %>" class="btn btn-primary" style="padding: 0.5rem 1rem; font-size: 0.85rem;">Detay</a>
+                        </div>
+                    </div>
+                </div>
+            <% }); %>
+        </div>
+
+        <!-- PAGINATION -->
+        <div style="display: flex; justify-content: center; align-items: center; gap: 0.5rem; margin-top: 2rem;">
+            <a href="?page=1" class="btn btn-outline" style="padding: 0.5rem 1rem;">← Önceki</a>
+            
+            <% for (let i = 1; i <= 3; i++) { %>
+                <a href="?page=<%= i %>" class="btn" style="
+                    padding: 0.5rem 1rem;
+                    background: <%= i === 1 ? 'var(--primary)' : 'var(--light)' %>;
+                    color: <%= i === 1 ? 'white' : 'var(--text-dark)' %>;
+                    border: 1px solid var(--border);
+                    border-radius: 6px;
+                    text-decoration: none;
+                "><%= i %></a>
+            <% } %>
+            
+            <a href="?page=2" class="btn btn-outline" style="padding: 0.5rem 1rem;">Sonraki →</a>
+        </div>
+    </div>
+</div>

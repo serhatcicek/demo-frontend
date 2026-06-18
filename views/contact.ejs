@@ -1,0 +1,298 @@
+<% title = 'İletişim' %>
+
+<!-- HEADER -->
+<div style="text-align: center; margin-bottom: 3rem;">
+    <h1 style="font-size: 2.5rem; color: var(--secondary); margin-bottom: 0.5rem;">İletişime Geçin</h1>
+    <p style="font-size: 1.1rem; color: var(--text-light);">Sorularınız, önerileriniz ve geri bildirimleriniz bizim için çok değerlidir.</p>
+</div>
+
+<!-- CONTACT INFO CARDS -->
+<div class="grid grid-3" style="margin-bottom: 3rem;">
+    <div style="
+        background: linear-gradient(135deg, var(--primary) 0%, #E55A2B 100%);
+        color: white;
+        padding: 2rem;
+        border-radius: 12px;
+        text-align: center;
+    ">
+        <div style="font-size: 2.5rem; margin-bottom: 1rem;">📞</div>
+        <h3 style="margin-bottom: 0.5rem;">Telefon</h3>
+        <p style="margin-bottom: 1rem; opacity: 0.9;">Bize hemen ulaşın</p>
+        <a href="tel:+905442896055" style="color: white; text-decoration: none; font-weight: 700;">0544 289 60 55</a>
+    </div>
+
+    <div style="
+        background: linear-gradient(135deg, var(--accent) 0%, #00B8A9 100%);
+        color: white;
+        padding: 2rem;
+        border-radius: 12px;
+        text-align: center;
+    ">
+        <div style="font-size: 2.5rem; margin-bottom: 1rem;">✉️</div>
+        <h3 style="margin-bottom: 0.5rem;">E-posta</h3>
+        <p style="margin-bottom: 1rem; opacity: 0.9;">Yazılı bilgi ve sorular için</p>
+        <a href="mailto:info@anarrentacar.com" style="color: white; text-decoration: none; font-weight: 700;">info@anarrentacar.com</a>
+    </div>
+
+    <div style="
+        background: linear-gradient(135deg, var(--secondary) 0%, #2D3E5F 100%);
+        color: white;
+        padding: 2rem;
+        border-radius: 12px;
+        text-align: center;
+    ">
+        <div style="font-size: 2.5rem; margin-bottom: 1rem;">📍</div>
+        <h3 style="margin-bottom: 0.5rem;">Adres</h3>
+        <p style="margin-bottom: 1rem; opacity: 0.9;">Ana şubesine ziyaret edin</p>
+        <p style="font-weight: 600;">Bayrampaşa, İstanbul<br>Türkiye</p>
+    </div>
+</div>
+
+<!-- MAIN CONTENT GRID -->
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-bottom: 3rem;">
+    <!-- CONTACT FORM -->
+    <div style="background: white; border-radius: 12px; padding: 2rem; box-shadow: 0 2px 12px rgba(0,0,0,0.08);">
+        <h2 style="margin-bottom: 1.5rem; color: var(--secondary); font-size: 1.5rem;">Mesaj Gönderin</h2>
+        
+        <form onsubmit="event.preventDefault(); alert('Mesajınız başarıyla gönderilmiştir! En kısa sürede sizinle iletişime geçeceğiz.');">
+            <!-- Name -->
+            <div style="margin-bottom: 1.5rem;">
+                <label style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: var(--text-dark);">Adınız Soyadınız</label>
+                <input type="text" required placeholder="Ahmet Yılmaz" style="
+                    width: 100%;
+                    padding: 0.75rem;
+                    border: 2px solid var(--border);
+                    border-radius: 6px;
+                    font-size: 1rem;
+                    transition: border-color 0.3s ease;
+                " onfocus="this.style.borderColor='var(--primary)'" onblur="this.style.borderColor='var(--border)'" />
+            </div>
+
+            <!-- Email -->
+            <div style="margin-bottom: 1.5rem;">
+                <label style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: var(--text-dark);">E-posta Adresiniz</label>
+                <input type="email" required placeholder="ahmet@example.com" style="
+                    width: 100%;
+                    padding: 0.75rem;
+                    border: 2px solid var(--border);
+                    border-radius: 6px;
+                    font-size: 1rem;
+                    transition: border-color 0.3s ease;
+                " onfocus="this.style.borderColor='var(--primary)'" onblur="this.style.borderColor='var(--border)'" />
+            </div>
+
+            <!-- Phone -->
+            <div style="margin-bottom: 1.5rem;">
+                <label style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: var(--text-dark);">Telefon Numaranız</label>
+                <input type="tel" placeholder="0544 289 60 55" style="
+                    width: 100%;
+                    padding: 0.75rem;
+                    border: 2px solid var(--border);
+                    border-radius: 6px;
+                    font-size: 1rem;
+                    transition: border-color 0.3s ease;
+                " onfocus="this.style.borderColor='var(--primary)'" onblur="this.style.borderColor='var(--border)'" />
+            </div>
+
+            <!-- Subject -->
+            <div style="margin-bottom: 1.5rem;">
+                <label style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: var(--text-dark);">Konu</label>
+                <select required style="
+                    width: 100%;
+                    padding: 0.75rem;
+                    border: 2px solid var(--border);
+                    border-radius: 6px;
+                    font-size: 1rem;
+                    background: white;
+                    color: var(--text-dark);
+                    cursor: pointer;
+                ">
+                    <option value="">Konu Seçin</option>
+                    <option value="reservation">Rezervasyon Hakkında</option>
+                    <option value="pricing">Fiyatlandırma</option>
+                    <option value="complaint">Şikayet</option>
+                    <option value="suggestion">Önerisi</option>
+                    <option value="other">Diğer</option>
+                </select>
+            </div>
+
+            <!-- Message -->
+            <div style="margin-bottom: 1.5rem;">
+                <label style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: var(--text-dark);">Mesajınız</label>
+                <textarea required placeholder="Mesajınızı buraya yazın..." rows="6" style="
+                    width: 100%;
+                    padding: 0.75rem;
+                    border: 2px solid var(--border);
+                    border-radius: 6px;
+                    font-size: 1rem;
+                    font-family: inherit;
+                    resize: vertical;
+                    transition: border-color 0.3s ease;
+                " onfocus="this.style.borderColor='var(--primary)'" onblur="this.style.borderColor='var(--border)'"></textarea>
+            </div>
+
+            <!-- Checkbox -->
+            <div style="margin-bottom: 1.5rem;">
+                <label style="display: flex; align-items: center; gap: 0.5rem; cursor: pointer;">
+                    <input type="checkbox" required style="cursor: pointer;" />
+                    <span style="color: var(--text-dark);">Gizlilik politikasını okudum ve kabul ediyorum</span>
+                </label>
+            </div>
+
+            <!-- Submit Button -->
+            <button type="submit" class="btn btn-primary" style="width: 100%; padding: 1rem; font-size: 1rem;">
+                Mesaj Gönder
+            </button>
+        </form>
+    </div>
+
+    <!-- COMPANY INFO & HOURS -->
+    <div>
+        <!-- Company Info -->
+        <div style="
+            background: linear-gradient(135deg, var(--light) 0%, #E0F2FE 100%);
+            padding: 2rem;
+            border-radius: 12px;
+            margin-bottom: 2rem;
+        ">
+            <h3 style="margin-bottom: 1rem; color: var(--secondary);">Hakkımızda</h3>
+            <p style="color: var(--text-dark); line-height: 1.8; margin-bottom: 1rem;">
+                Anar Rent A Car, İstanbul'da 10 yılı aşkın süredir kaliteli ve güvenilir araç kiralama hizmetleri sunmaktadır. Müşteri memnuniyeti bizim birinci önceliğimizdir.
+            </p>
+            <p style="color: var(--text-dark); line-height: 1.8;">
+                Tüm araçlarımız düzenli olarak bakım ve kontrol edilmektedir. Sigorta, vergi ve tüm resmi işlemler çözüme dahildir.
+            </p>
+        </div>
+
+        <!-- Business Hours -->
+        <div style="
+            background: white;
+            border-left: 4px solid var(--primary);
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            margin-bottom: 2rem;
+        ">
+            <h3 style="margin-bottom: 1.5rem; color: var(--secondary);">⏰ Çalışma Saatleri</h3>
+            <table style="width: 100%; border-collapse: collapse;">
+                <tbody>
+                    <% 
+                        const hours = [
+                            { day: 'Pazartesi', time: '08:00 - 20:00' },
+                            { day: 'Salı', time: '08:00 - 20:00' },
+                            { day: 'Çarşamba', time: '08:00 - 20:00' },
+                            { day: 'Perşembe', time: '08:00 - 20:00' },
+                            { day: 'Cuma', time: '08:00 - 20:00' },
+                            { day: 'Cumartesi', time: '09:00 - 18:00' },
+                            { day: 'Pazar', time: '10:00 - 17:00' }
+                        ];
+                    %>
+                    <% hours.forEach((hour, index) => { %>
+                        <tr style="border-bottom: <%= index < hours.length - 1 ? '1px solid var(--border)' : 'none' %>;">
+                            <td style="padding: 0.75rem 0; color: var(--text-dark);">
+                                <strong><%= hour.day %></strong>
+                            </td>
+                            <td style="padding: 0.75rem 0; text-align: right; color: var(--text-light);">
+                                <%= hour.time %>
+                            </td>
+                        </tr>
+                    <% }); %>
+                </tbody>
+            </table>
+            <p style="margin-top: 1rem; font-size: 0.9rem; color: var(--text-light);">
+                🎉 Tatil günlerinde özel saatler uygulanabilir.
+            </p>
+        </div>
+
+        <!-- Quick Links -->
+        <div style="
+            background: linear-gradient(135deg, var(--primary) 0%, #E55A2B 100%);
+            color: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            text-align: center;
+        ">
+            <h3 style="margin-bottom: 1rem;">Hızlı Bağlantılar</h3>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem;">
+                <a href="https://wa.me/5442896055" style="display: block; background: rgba(255,255,255,0.2); padding: 0.75rem; border-radius: 6px; text-decoration: none; color: white; font-weight: 600; transition: background 0.3s ease;" onmouseover="this.style.background='rgba(255,255,255,0.3)'" onmouseout="this.style.background='rgba(255,255,255,0.2)'">💬 WhatsApp</a>
+                <a href="tel:+905442896055" style="display: block; background: rgba(255,255,255,0.2); padding: 0.75rem; border-radius: 6px; text-decoration: none; color: white; font-weight: 600; transition: background 0.3s ease;" onmouseover="this.style.background='rgba(255,255,255,0.3)'" onmouseout="this.style.background='rgba(255,255,255,0.2)'">📞 Ara</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- MAP SECTION -->
+<div style="margin-bottom: 3rem;">
+    <h2 style="margin-bottom: 1.5rem; color: var(--secondary); font-size: 1.5rem;">📍 Lokasyon</h2>
+    <div style="
+        background: linear-gradient(135deg, var(--secondary) 0%, #2D3E5F 100%);
+        border-radius: 12px;
+        height: 400px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: 2rem;
+        overflow: hidden;
+        position: relative;
+    ">
+        <!-- Map Placeholder with Istanbul Location info -->
+        <div style="text-align: center;">
+            <div style="font-size: 3rem; margin-bottom: 1rem;">🗺️</div>
+            <h3 style="margin-bottom: 0.5rem;">Anar Rent A Car</h3>
+            <p style="opacity: 0.9; margin-bottom: 1rem;">Bayrampaşa, İstanbul, Türkiye</p>
+            <p style="font-size: 0.9rem; opacity: 0.8;">Google Maps entegrasyonu yapılabilir</p>
+            <a href="https://maps.google.com/?q=Anar+Rent+A+Car+Istanbul" target="_blank" style="
+                display: inline-block;
+                margin-top: 1rem;
+                background: var(--primary);
+                color: white;
+                padding: 0.75rem 1.5rem;
+                border-radius: 6px;
+                text-decoration: none;
+                font-weight: 600;
+                transition: background 0.3s ease;
+            " onmouseover="this.style.background='#E55A2B'" onmouseout="this.style.background='var(--primary)'">
+                Google Maps'te Aç
+            </a>
+        </div>
+    </div>
+</div>
+
+<!-- FAQ SECTION -->
+<section style="background: var(--light); padding: 2rem; border-radius: 12px;">
+    <h2 style="margin-bottom: 2rem; color: var(--secondary); text-align: center;">Sık Sorulan Sorular</h2>
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;">
+        <%
+            const faqs = [
+                {
+                    q: 'Minimum yaş sınırı kaç?',
+                    a: 'Araç kiralayabilmek için en az 21 yaşında olmanız ve 2 yıllık ehliyetinizin olması gerekmektedir.'
+                },
+                {
+                    q: 'Yakıt politikası nedir?',
+                    a: 'Araçları tam dolu yakıt ile teslim alacak ve tam dolu geri teslim edeceksiniz. Aksi takdirde litre başı ₺35 fatura kesilecektir.'
+                },
+                {
+                    q: 'İptal politikası nedir?',
+                    a: '24 saat öncesinden yapılan iptallemeler ücretsizdir. Daha kısa sürede yapılan iptaller için %50 ceza uygulanır.'
+                },
+                {
+                    q: 'Ek sürücü ekleyebilir miyim?',
+                    a: 'Evet, ek sürücüyü rezervasyon sırasında ekleyebilir veya sonradan isteyebilirsiniz. Ek sürücü başına ₺50 ceza uygulanır.'
+                }
+            ];
+        %>
+        <% faqs.forEach(faq => { %>
+            <div style="
+                background: white;
+                padding: 1rem;
+                border-radius: 8px;
+                border-left: 4px solid var(--primary);
+            ">
+                <h4 style="margin-bottom: 0.5rem; color: var(--secondary);">❓ <%= faq.q %></h4>
+                <p style="color: var(--text-dark); font-size: 0.9rem;"><%= faq.a %></p>
+            </div>
+        <% }); %>
+    </div>
+</section>

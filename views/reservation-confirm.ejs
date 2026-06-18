@@ -1,0 +1,193 @@
+<% title = 'Rezervasyon Onayı' %>
+
+<!-- SUCCESS HEADER -->
+<div style="
+    text-align: center;
+    padding: 2rem;
+    background: linear-gradient(135deg, var(--accent) 0%, #00B8A9 100%);
+    border-radius: 12px;
+    color: white;
+    margin-bottom: 2rem;
+">
+    <div style="font-size: 4rem; margin-bottom: 1rem;">✅</div>
+    <h1 style="font-size: 2rem; margin-bottom: 0.5rem;">Rezervasyon Onaylandı!</h1>
+    <p style="font-size: 1.1rem; opacity: 0.9;">Kiralama işlemi başarılı bir şekilde tamamlanmıştır.</p>
+</div>
+
+<!-- REFERENCE NUMBER -->
+<div style="
+    background: white;
+    border: 3px solid var(--primary);
+    border-radius: 8px;
+    padding: 2rem;
+    text-align: center;
+    margin-bottom: 2rem;
+">
+    <p style="color: var(--text-light); margin-bottom: 0.5rem;">Rezervasyon Numaranız</p>
+    <h2 style="
+        font-size: 2.5rem;
+        color: var(--primary);
+        font-weight: 700;
+        font-family: 'Courier New', monospace;
+        letter-spacing: 0.1em;
+        margin-bottom: 1rem;
+    ">#RES-2026-0618-00127</h2>
+    <p style="color: var(--text-light); font-size: 0.9rem;">
+        <strong>Tarih:</strong> 18 Haziran 2026, 14:35<br>
+        Lütfen bu numarayı kaydedin. Teslim sırasında gerekli olacaktır.
+    </p>
+</div>
+
+<!-- RESERVATION DETAILS -->
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-bottom: 3rem;">
+    <!-- Vehicle Details -->
+    <div style="background: white; padding: 1.5rem; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.08);">
+        <h3 style="margin-bottom: 1rem; color: var(--secondary); font-size: 1.1rem;">🚗 Araç Bilgileri</h3>
+        <div style="display: flex; gap: 1rem;">
+            <div style="
+                background: linear-gradient(135deg, var(--secondary) 0%, #2D3E5F 100%);
+                width: 80px;
+                height: 80px;
+                border-radius: 8px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: white;
+                font-size: 2rem;
+            ">🚗</div>
+            <div style="flex: 1;">
+                <h4 style="color: var(--text-dark); font-size: 1.1rem; margin-bottom: 0.25rem;">BMW X5</h4>
+                <p style="color: var(--text-light); font-size: 0.9rem; margin-bottom: 0.5rem;">2024 | 50 km | SUV</p>
+                <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.5rem; font-size: 0.85rem; color: var(--text-light);">
+                    <span>7 kişi</span>
+                    <span>500L bagaj</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Customer Details -->
+    <div style="background: white; padding: 1.5rem; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.08);">
+        <h3 style="margin-bottom: 1rem; color: var(--secondary); font-size: 1.1rem;">👤 Müşteri Bilgileri</h3>
+        <div style="line-height: 2;">
+            <p><strong>Ad Soyad:</strong> Ahmet Yılmaz</p>
+            <p><strong>E-posta:</strong> ahmet@example.com</p>
+            <p><strong>Telefon:</strong> 0544 289 60 55</p>
+            <p><strong>Ehliyet No:</strong> 1234567890</p>
+        </div>
+    </div>
+</div>
+
+<!-- RENTAL PERIOD -->
+<div style="background: linear-gradient(135deg, var(--light) 0%, #E0F2FE 100%); padding: 1.5rem; border-radius: 8px; margin-bottom: 3rem;">
+    <h3 style="margin-bottom: 1rem; color: var(--secondary);">📅 Kiralama Dönem</h3>
+    <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 2rem;">
+        <div>
+            <p style="color: var(--text-light); font-size: 0.9rem; margin-bottom: 0.25rem;">Başlangıç Tarihi</p>
+            <p style="font-size: 1.2rem; font-weight: 700; color: var(--secondary);">20 Haziran 2026</p>
+            <p style="color: var(--text-light); font-size: 0.9rem;">Perşembe, 14:00</p>
+        </div>
+        <div>
+            <p style="color: var(--text-light); font-size: 0.9rem; margin-bottom: 0.25rem;">Bitiş Tarihi</p>
+            <p style="font-size: 1.2rem; font-weight: 700; color: var(--secondary);">23 Haziran 2026</p>
+            <p style="color: var(--text-light); font-size: 0.9rem;">Pazar, 14:00</p>
+        </div>
+        <div style="background: white; padding: 1rem; border-radius: 6px; border-left: 4px solid var(--primary);">
+            <p style="color: var(--text-light); font-size: 0.9rem; margin-bottom: 0.25rem;">Gün Sayısı</p>
+            <p style="font-size: 1.5rem; font-weight: 700; color: var(--primary);">3 Gün</p>
+        </div>
+    </div>
+</div>
+
+<!-- PRICING BREAKDOWN -->
+<div style="background: white; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.08); padding: 1.5rem; margin-bottom: 3rem;">
+    <h3 style="margin-bottom: 1.5rem; color: var(--secondary);">💰 Fiyat Detayları</h3>
+    <table style="width: 100%; border-collapse: collapse;">
+        <tbody>
+            <tr style="border-bottom: 1px solid var(--border);">
+                <td style="padding: 0.75rem 0; color: var(--text-dark);">Günlük Fiyat (₺2.500 x 3 gün)</td>
+                <td style="padding: 0.75rem 0; text-align: right; color: var(--text-dark);">₺7.500</td>
+            </tr>
+            <tr style="border-bottom: 1px solid var(--border);">
+                <td style="padding: 0.75rem 0; color: var(--text-dark);">Kapsamlı Sigorta</td>
+                <td style="padding: 0.75rem 0; text-align: right; color: var(--text-dark);">₺150</td>
+            </tr>
+            <tr style="border-bottom: 1px solid var(--border);">
+                <td style="padding: 0.75rem 0; color: var(--text-dark);">Ek Sürücü (isteğe bağlı)</td>
+                <td style="padding: 0.75rem 0; text-align: right; color: var(--text-dark);">₺0</td>
+            </tr>
+            <tr style="border-bottom: 2px solid var(--primary);">
+                <td style="padding: 0.75rem 0; color: var(--text-dark);">KDV (%18)</td>
+                <td style="padding: 0.75rem 0; text-align: right; color: var(--text-dark);">₺1.269</td>
+            </tr>
+            <tr style="background: var(--light);">
+                <td style="padding: 1rem 0; font-weight: 700; color: var(--secondary);">TOPLAM TUTAR</td>
+                <td style="padding: 1rem 0; text-align: right; font-weight: 700; font-size: 1.2rem; color: var(--primary);">₺8.919</td>
+            </tr>
+        </tbody>
+    </table>
+    <p style="margin-top: 1rem; color: var(--text-light); font-size: 0.9rem;">
+        <strong>Ödeme Durumu:</strong> Kredi kartında işlem yapılmıştır. Teslim sırasında ek ödeme gerekmeyecektir.
+    </p>
+</div>
+
+<!-- PICKUP & DELIVERY INSTRUCTIONS -->
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-bottom: 3rem;">
+    <div style="background: linear-gradient(135deg, #FEF3C7 0%, #FDE68A 100%); padding: 1.5rem; border-radius: 8px; border-left: 4px solid #F59E0B;">
+        <h3 style="margin-bottom: 1rem; color: var(--secondary);">📍 Teslim Alma Lokasyonu</h3>
+        <p style="font-weight: 600; margin-bottom: 0.5rem;">İstanbul Şubesi</p>
+        <p style="color: var(--text-dark); margin-bottom: 1rem; font-size: 0.9rem;">
+            Bayrampaşa, Arap Camii Sk. No:15<br>
+            İstanbul, 34000
+        </p>
+        <p style="color: var(--text-dark); font-size: 0.9rem; margin-bottom: 0.5rem;"><strong>Telefon:</strong> 0544 289 60 55</p>
+        <p style="color: var(--text-dark); font-size: 0.9rem;"><strong>Saat:</strong> 08:00 - 20:00 (Tüm gün)</p>
+    </div>
+
+    <div style="background: linear-gradient(135deg, #DBEAFE 0%, #BFDBFE 100%); padding: 1.5rem; border-radius: 8px; border-left: 4px solid #3B82F6;">
+        <h3 style="margin-bottom: 1rem; color: var(--secondary);">📍 Teslim Etme Lokasyonu</h3>
+        <p style="font-weight: 600; margin-bottom: 0.5rem;">İstanbul Şubesi (Aynı Lokasyon)</p>
+        <p style="color: var(--text-dark); margin-bottom: 1rem; font-size: 0.9rem;">
+            Bayrampaşa, Arap Camii Sk. No:15<br>
+            İstanbul, 34000
+        </p>
+        <p style="color: var(--text-dark); font-size: 0.9rem; margin-bottom: 0.5rem;"><strong>Telefon:</strong> 0544 289 60 55</p>
+        <p style="color: var(--text-dark); font-size: 0.9rem;"><strong>Dönüş Saati:</strong> 23 Haziran, 14:00</p>
+    </div>
+</div>
+
+<!-- IMPORTANT INSTRUCTIONS -->
+<div style="background: #FEE2E2; padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--error); margin-bottom: 3rem;">
+    <h3 style="margin-bottom: 1rem; color: var(--secondary);">⚠️ Önemli Talimatlar</h3>
+    <ul style="list-style: none; line-height: 2; color: var(--text-dark);">
+        <li>✓ Teslim saatinden 15 dakika önce lokasyona gelin</li>
+        <li>✓ Geçerli ehliyet ve kimlik belgelerinizi yanınızda getirin</li>
+        <li>✓ Araç muayenesini dikkatli bir şekilde yapın ve hasarları kaydedin</li>
+        <li>✓ Yakıt seviyesi tam dolu ile teslim alacaksınız</li>
+        <li>✓ Aracı aynı durumda geri teslim edin (temiz ve yakıt dolumu tam)</li>
+        <li>✓ Geç iade durumunda ₺50/saat ceza uygulanacaktır</li>
+    </ul>
+</div>
+
+<!-- CONTACT SECTION -->
+<div style="background: linear-gradient(135deg, var(--secondary) 0%, #2D3E5F 100%); color: white; padding: 2rem; border-radius: 8px; text-align: center; margin-bottom: 2rem;">
+    <h3 style="margin-bottom: 1.5rem;">Sorularınız mı var?</h3>
+    <p style="margin-bottom: 1.5rem; opacity: 0.9;">Herhangi bir sorunuz olması durumunda bizimle iletişime geçin:</p>
+    <div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
+        <a href="tel:+905442896055" class="btn btn-primary" style="display: inline-block;">📞 Telefon Ara</a>
+        <a href="https://wa.me/5442896055?text=Merhaba%2C%20Rezervasyon%20%23RES-2026-0618-00127%20hakkında%20sorularım%20var" class="btn" style="display: inline-block; background: #25D366; color: white; padding: 0.75rem 1.5rem; border-radius: 6px; text-decoration: none;">💬 WhatsApp</a>
+        <a href="/contact" class="btn btn-outline" style="display: inline-block;">📧 E-posta Gönder</a>
+    </div>
+</div>
+
+<!-- ACTION BUTTONS -->
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 2rem;">
+    <a href="/vehicles" class="btn btn-secondary" style="display: block; text-align: center; padding: 1rem; text-decoration: none;">← Araçlara Dön</a>
+    <button onclick="window.print()" class="btn btn-primary" style="width: 100%; padding: 1rem; cursor: pointer;">🖨️ Yazdır</button>
+</div>
+
+<!-- EMAIL CONFIRMATION -->
+<div style="background: var(--light); padding: 1rem; border-radius: 8px; text-align: center; color: var(--text-light);">
+    <p>Onay e-postası <strong>ahmet@example.com</strong> adresine gönderilmiştir.</p>
+    <p style="font-size: 0.9rem; margin-top: 0.5rem;">E-postanızı kontrol edin ve önemli belgeleri indirin.</p>
+</div>

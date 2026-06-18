@@ -1,0 +1,149 @@
+<% title = 'Hata' %>
+
+<!-- ERROR CONTAINER -->
+<div style="
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 60vh;
+    text-align: center;
+">
+    <!-- ERROR ICON -->
+    <div style="
+        font-size: 6rem;
+        margin-bottom: 2rem;
+    ">
+        😞
+    </div>
+
+    <!-- ERROR MESSAGE -->
+    <h1 style="
+        font-size: 3rem;
+        color: var(--secondary);
+        margin-bottom: 0.5rem;
+        font-weight: 700;
+    ">
+        <%= typeof statusCode !== 'undefined' ? statusCode : '404' %>
+    </h1>
+
+    <!-- ERROR DESCRIPTION -->
+    <p style="
+        font-size: 1.5rem;
+        color: var(--text-dark);
+        margin-bottom: 1rem;
+        font-weight: 600;
+    ">
+        <%= typeof message !== 'undefined' ? message : 'Sayfa Bulunamadı' %>
+    </p>
+
+    <!-- ERROR DETAILS -->
+    <p style="
+        font-size: 1rem;
+        color: var(--text-light);
+        max-width: 500px;
+        margin-bottom: 3rem;
+        line-height: 1.8;
+    ">
+        <%= typeof description !== 'undefined' ? description : 'Aradığınız sayfa ya silinmiş, taşınmış ya da hiç var olmamış olabilir. Lütfen adres çubuğunu kontrol edin.' %>
+    </p>
+
+    <!-- ACTION BUTTONS -->
+    <div style="
+        display: flex;
+        gap: 1rem;
+        flex-wrap: wrap;
+        justify-content: center;
+    ">
+        <a href="/" class="btn btn-primary" style="
+            display: inline-block;
+            padding: 1rem 2rem;
+            font-size: 1rem;
+        ">
+            🏠 Anasayfaya Dön
+        </a>
+        <a href="/vehicles" class="btn btn-secondary" style="
+            display: inline-block;
+            padding: 1rem 2rem;
+            font-size: 1rem;
+        ">
+            🚗 Araçları Keşfet
+        </a>
+        <a href="/contact" class="btn btn-outline" style="
+            display: inline-block;
+            padding: 1rem 2rem;
+            font-size: 1rem;
+        ">
+            💬 İletişim
+        </a>
+    </div>
+
+    <!-- ERROR CODE BOX (Optional - for debugging) -->
+    <% if (typeof error !== 'undefined' && error) { %>
+        <div style="
+            background: var(--light);
+            border-left: 4px solid var(--error);
+            padding: 1.5rem;
+            margin-top: 3rem;
+            max-width: 600px;
+            text-align: left;
+            border-radius: 8px;
+            display: none;
+        ">
+            <p style="
+                color: var(--text-light);
+                font-size: 0.9rem;
+                margin-bottom: 0.5rem;
+            ">
+                Hata Detayları (Geliştirme Modu):
+            </p>
+            <pre style="
+                background: white;
+                padding: 1rem;
+                border-radius: 4px;
+                overflow-x: auto;
+                color: var(--error);
+                font-size: 0.85rem;
+            "><%= error %></pre>
+        </div>
+    <% } %>
+
+    <!-- SUGGESTION SECTION -->
+    <div style="
+        background: linear-gradient(135deg, var(--accent) 0%, #00B8A9 100%);
+        color: white;
+        padding: 2rem;
+        margin-top: 3rem;
+        border-radius: 8px;
+        max-width: 600px;
+        text-align: center;
+    ">
+        <h3 style="margin-bottom: 1rem;">💡 Biraz Yardım mı Lazım?</h3>
+        <ul style="
+            list-style: none;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+            text-align: left;
+            display: inline-block;
+        ">
+            <li>✓ <a href="/vehicles" style="color: white; font-weight: 600; text-decoration: none;">Araçlarımızı keşfedin</a></li>
+            <li>✓ <a href="/contact" style="color: white; font-weight: 600; text-decoration: none;">Bize iletişim bilgileri</a></li>
+            <li>✓ <a href="https://wa.me/5442896055" style="color: white; font-weight: 600; text-decoration: none;">WhatsApp'ta yazın</a></li>
+        </ul>
+        <p style="font-size: 0.9rem; opacity: 0.9;">
+            Sorun devam ederse, lütfen <a href="https://wa.me/5442896055" style="color: white; text-decoration: underline;">bize ulaşın</a>.
+        </p>
+    </div>
+</div>
+
+<!-- ERROR ANIMATION (optional CSS) -->
+<style>
+    @keyframes float {
+        0%, 100% { transform: translateY(0px); }
+        50% { transform: translateY(-20px); }
+    }
+    
+    [style*="font-size: 6rem"] {
+        animation: float 3s ease-in-out infinite;
+    }
+</style>

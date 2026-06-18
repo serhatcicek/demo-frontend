@@ -5,5 +5,14 @@
   "description": "Contract-first frontend demo for payments",
   "scripts": {
     "dev": "node server.js"
+  },
+  "dependencies": {
+    "axios": "^1.18.0",
+    "body-parser": "^2.3.0",
+    "cors": "^2.8.6",
+    "dotenv": "^17.4.2",
+    "ejs": "^6.0.1",
+    "express": "^5.2.1",
+    "express-ejs-layouts": "^2.5.1"
   }
 }

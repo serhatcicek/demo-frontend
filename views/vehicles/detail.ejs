@@ -1,0 +1,318 @@
+<% title = 'Araç Detayı' %>
+
+<div style="margin-bottom: 2rem;">
+    <a href="/vehicles" style="color: var(--primary); text-decoration: none; font-weight: 600;">← Araçlara Dön</a>
+</div>
+
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; margin-bottom: 3rem;">
+    <!-- IMAGE GALLERY -->
+    <div>
+        <!-- Main Image -->
+        <div style="
+            background: linear-gradient(135deg, var(--secondary) 0%, #2D3E5F 100%);
+            border-radius: 12px;
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 5rem;
+            color: white;
+            margin-bottom: 1rem;
+            position: relative;
+        ">
+            🚗
+            <span style="
+                position: absolute;
+                top: 15px;
+                left: 15px;
+                background: var(--accent);
+                color: white;
+                padding: 0.5rem 1rem;
+                border-radius: 6px;
+                font-size: 0.9rem;
+                font-weight: 600;
+            ">SUV</span>
+        </div>
+
+        <!-- Thumbnail Gallery -->
+        <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.5rem;">
+            <% for (let i = 0; i < 4; i++) { %>
+                <div style="
+                    background: linear-gradient(135deg, var(--light) 0%, #E2E8F0 100%);
+                    border-radius: 8px;
+                    height: 80px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    cursor: pointer;
+                    border: 2px solid <%= i === 0 ? 'var(--primary)' : 'var(--border)' %>;
+                    font-size: 1.5rem;
+                " onmouseover="this.style.borderColor='var(--primary)'" onmouseout="this.style.borderColor='<%= i === 0 ? 'var(--primary)' : 'var(--border)' %>'">
+                    📸
+                </div>
+            <% } %>
+        </div>
+    </div>
+
+    <!-- DETAILS & SPECS -->
+    <div>
+        <h1 style="font-size: 2rem; color: var(--secondary); margin-bottom: 0.5rem;">BMW X5</h1>
+        <p style="color: var(--text-light); margin-bottom: 1.5rem; font-size: 1.1rem;">2024 | 50 km | İstanbul</p>
+
+        <!-- Rating -->
+        <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 2rem;">
+            <div>
+                <span style="font-size: 1.3rem; font-weight: 700; color: var(--secondary);">4.9</span>
+                <div>
+                    <% for (let i = 0; i < 5; i++) { %>
+                        <span style="color: #FBBF24;">⭐</span>
+                    <% } %>
+                </div>
+            </div>
+            <div style="color: var(--text-light);">
+                <p>(127 yorum)</p>
+                <p style="font-size: 0.9rem;">Müşteriler bunu seviyor</p>
+            </div>
+        </div>
+
+        <!-- Price Highlight -->
+        <div style="
+            background: linear-gradient(135deg, var(--primary) 0%, #E55A2B 100%);
+            color: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+        ">
+            <p style="font-size: 0.9rem; margin-bottom: 0.5rem;">Günlük Fiyat</p>
+            <h2 style="font-size: 2.5rem; margin-bottom: 0.5rem;">₺2.500</h2>
+            <p style="font-size: 0.85rem; opacity: 0.9;">Vergiler ve ücretler dahil</p>
+        </div>
+
+        <!-- Key Specs -->
+        <div style="
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            margin-bottom: 2rem;
+        ">
+            <% 
+                const specs = [
+                    { icon: '🪑', label: 'Koltuk', value: '7 kişi' },
+                    { icon: '🛢️', label: 'Yakıt', value: 'Benzin' },
+                    { icon: '⚙️', label: 'Vites', value: 'Otomatik' },
+                    { icon: '📦', label: 'Bagaj', value: '500L' },
+                    { icon: '✈️', label: 'Km/L', value: '8.5 km/L' },
+                    { icon: '🔧', label: 'Motor', value: '3.0L V6' }
+                ];
+            %>
+            <% specs.forEach(spec => { %>
+                <div style="
+                    background: var(--light);
+                    padding: 1rem;
+                    border-radius: 8px;
+                    text-align: center;
+                ">
+                    <div style="font-size: 1.5rem; margin-bottom: 0.5rem;"><%= spec.icon %></div>
+                    <p style="color: var(--text-light); font-size: 0.85rem; margin-bottom: 0.25rem;"><%= spec.label %></p>
+                    <p style="color: var(--text-dark); font-weight: 600;"><%= spec.value %></p>
+                </div>
+            <% }); %>
+        </div>
+
+        <!-- Amenities -->
+        <div style="margin-bottom: 2rem;">
+            <h3 style="margin-bottom: 1rem; color: var(--secondary);">Araç Özellikleri</h3>
+            <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.75rem;">
+                <% 
+                    const amenities = [
+                        '🚗 Çilingir sistemli kapılar',
+                        '❄️ İklim kontrolü',
+                        '🔊 Premium ses sistemi',
+                        '🛰️ Navigasyon sistemi',
+                        '📱 Apple CarPlay / Android Auto',
+                        '🔒 Geri vites kamerası',
+                        '⛽ Yakıt dolum hizmetli',
+                        '🎫 Oto sigortası dahil'
+                    ];
+                %>
+                <% amenities.forEach(amenity => { %>
+                    <label style="display: flex; align-items: center; gap: 0.5rem; cursor: pointer;">
+                        <input type="checkbox" checked disabled style="cursor: pointer;" />
+                        <span style="color: var(--text-dark); font-size: 0.9rem;"><%= amenity %></span>
+                    </label>
+                <% }); %>
+            </div>
+        </div>
+
+        <!-- WhatsApp CTA -->
+        <a href="https://wa.me/5442896055?text=Merhaba%2C%20BMW%20X5%20hakkında%20sorularım%20var" class="btn" style="
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            background: #25D366;
+            color: white;
+            width: 100%;
+            padding: 1rem;
+            font-size: 1rem;
+            margin-bottom: 1rem;
+        ">
+            💬 WhatsApp'ta Bilgi Al
+        </a>
+    </div>
+</div>
+
+<!-- RESERVATION FORM SECTION -->
+<section style="
+    background: linear-gradient(135deg, var(--light) 0%, #E0F2FE 100%);
+    padding: 2rem;
+    border-radius: 12px;
+    margin-bottom: 3rem;
+">
+    <h2 style="margin-bottom: 2rem; color: var(--secondary); text-align: center;">Rezervasyon Yap</h2>
+    
+    <form style="max-width: 600px; margin: 0 auto;" onsubmit="event.preventDefault(); alert('Rezervasyon başarılı! Onay numaranız: #RES-2026-0618-001');">
+        <!-- Reservation Dates -->
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1.5rem;">
+            <div>
+                <label style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: var(--text-dark);">Başlangıç Tarihi</label>
+                <input type="date" required style="
+                    width: 100%;
+                    padding: 0.75rem;
+                    border: 2px solid var(--border);
+                    border-radius: 6px;
+                    font-size: 1rem;
+                " />
+            </div>
+            <div>
+                <label style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: var(--text-dark);">Bitiş Tarihi</label>
+                <input type="date" required style="
+                    width: 100%;
+                    padding: 0.75rem;
+                    border: 2px solid var(--border);
+                    border-radius: 6px;
+                    font-size: 1rem;
+                " />
+            </div>
+        </div>
+
+        <!-- Location Selection -->
+        <div style="margin-bottom: 1.5rem;">
+            <label style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: var(--text-dark);">Teslim Lokasyonu</label>
+            <select required style="
+                width: 100%;
+                padding: 0.75rem;
+                border: 2px solid var(--border);
+                border-radius: 6px;
+                font-size: 1rem;
+            ">
+                <option value="">Lokasyon Seçin</option>
+                <option value="istanbul">İstanbul Şubesi</option>
+                <option value="ankara">Ankara Şubesi</option>
+                <option value="izmir">İzmir Şubesi</option>
+                <option value="airport">Sabiha Gökçen Havalimanı</option>
+            </select>
+        </div>
+
+        <!-- Personal Information -->
+        <div style="background: white; padding: 1.5rem; border-radius: 8px; margin-bottom: 1.5rem;">
+            <h3 style="margin-bottom: 1rem; color: var(--secondary);">Kişisel Bilgiler</h3>
+            
+            <div style="margin-bottom: 1rem;">
+                <label style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: var(--text-dark);">Adınız Soyadınız</label>
+                <input type="text" required placeholder="Ahmet Yılmaz" style="
+                    width: 100%;
+                    padding: 0.75rem;
+                    border: 2px solid var(--border);
+                    border-radius: 6px;
+                    font-size: 1rem;
+                " />
+            </div>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem;">
+                <div>
+                    <label style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: var(--text-dark);">E-posta</label>
+                    <input type="email" required placeholder="ahmet@example.com" style="
+                        width: 100%;
+                        padding: 0.75rem;
+                        border: 2px solid var(--border);
+                        border-radius: 6px;
+                        font-size: 1rem;
+                    " />
+                </div>
+                <div>
+                    <label style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: var(--text-dark);">Telefon</label>
+                    <input type="tel" required placeholder="0544 289 60 55" style="
+                        width: 100%;
+                        padding: 0.75rem;
+                        border: 2px solid var(--border);
+                        border-radius: 6px;
+                        font-size: 1rem;
+                    " />
+                </div>
+            </div>
+
+            <div>
+                <label style="display: flex; align-items: center; gap: 0.5rem; cursor: pointer;">
+                    <input type="checkbox" required style="cursor: pointer;" />
+                    <span style="color: var(--text-dark);">Şartları ve koşulları kabul ediyorum</span>
+                </label>
+            </div>
+        </div>
+
+        <!-- Price Summary -->
+        <div style="
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 1.5rem;
+            border-left: 4px solid var(--primary);
+        ">
+            <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                <span>Günlük Fiyat:</span>
+                <span>₺2.500</span>
+            </div>
+            <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                <span>Gün Sayısı:</span>
+                <span>3 gün</span>
+            </div>
+            <div style="display: flex; justify-content: space-between; margin-bottom: 1rem; padding-bottom: 1rem; border-bottom: 1px solid var(--border);">
+                <span>Sigorta:</span>
+                <span>₺150</span>
+            </div>
+            <div style="display: flex; justify-content: space-between; font-weight: 700; font-size: 1.1rem;">
+                <span>TOPLAM:</span>
+                <span style="color: var(--primary);">₺7.650</span>
+            </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary" style="width: 100%; padding: 1rem; font-size: 1.1rem;">
+            Rezervasyon Yap
+        </button>
+    </form>
+</section>
+
+<!-- ADDITIONAL INFO -->
+<section style="background: var(--light); padding: 2rem; border-radius: 12px; margin-bottom: 2rem;">
+    <h2 style="margin-bottom: 1.5rem; color: var(--secondary);">Kiralama Şartları</h2>
+    <div class="grid grid-2">
+        <div>
+            <h3 style="margin-bottom: 0.75rem; color: var(--primary);">📋 Gerekli Belgeler</h3>
+            <ul style="list-style: none; color: var(--text-dark); line-height: 1.8;">
+                <li>✓ Geçerli kimlik belgesi</li>
+                <li>✓ Geçerli ehliyet (en az 2 yıl)</li>
+                <li>✓ Kredi kartı (teminat için)</li>
+                <li>✓ İkamet belgesi</li>
+            </ul>
+        </div>
+        <div>
+            <h3 style="margin-bottom: 0.75rem; color: var(--primary);">⚙️ Araç Teslimi</h3>
+            <ul style="list-style: none; color: var(--text-dark); line-height: 1.8;">
+                <li>✓ Araç çıkış muayenesi yapılır</li>
+                <li>✓ Yakıt tankı tam dolu verilir</li>
+                <li>✓ 50 km/saat hız sınırı uyulacak</li>
+                <li>✓ Sigortası tamamen kapsamlıdır</li>
+            </ul>
+        </div>
+    </div>
+</section>
